@@ -54,7 +54,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		if (data.compareTo(root.getData()) < 0) {
 			root.setLeft(this.insert(root.getLeft(), data));
 		} 
-		else if (data.compareTo(root.getData()) >= 0) {
+		else if (data.compareTo(root.getData()) > 0) {
 			root.setRight(this.insert(root.getRight(), data));
 		}
 		
