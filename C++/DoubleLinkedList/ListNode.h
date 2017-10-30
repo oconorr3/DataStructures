@@ -20,7 +20,7 @@ private:
 public:
 	ListNode();
 	ListNode(T data);
-	~ListNode();
+	ListNode(T data, ListNode<T>* next, ListNode<T>* prev);
 	T getData();
 	ListNode<T>* getNext();
 	ListNode<T>* getPrev();
@@ -34,7 +34,7 @@ public:
 */
 template <class T> ListNode<T>::ListNode()
 {
-	data = NULL;
+	data = 0;
 	next = NULL;
 	prev = NULL;
 }
@@ -52,7 +52,7 @@ template <class T> ListNode<T>::ListNode(T data)
 /*
 * Additional Constructor for ListNode
 */
-template <class T> ListNode<T>::ListNode(T data, ListNode<T>* next, ListNode<T>* prev);
+template <class T> ListNode<T>::ListNode(T data, ListNode<T>* next, ListNode<T>* prev)
 {
 	this->data = data;
 	this->next = next;

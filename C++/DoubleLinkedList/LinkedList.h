@@ -38,8 +38,8 @@ public:
 template <class T> LinkedList<T>::LinkedList()
 {
 	size = 0;
-	head = new ListNode<T>(NULL);
-	tail = new ListNode<T>(NULL);
+	head = new ListNode<T>();
+	tail = new ListNode<T>();
 	head->setNext(tail);
 	tail->setPrev(head);
 }
@@ -141,14 +141,14 @@ template <class T> void LinkedList<T>::removeLast()
 */
 template <class T> void LinkedList<T>::iterateForward()
 {
-	std::cout<<"NULL\n";
+	
 	ListNode<T>* tmp = head;
 	while (tmp != NULL)
 	{
 		std::cout << tmp->getData() << " <--> ";
 		tmp = tmp->getNext();
 	}
-	std::cout<<"NULL\n";
+	std::cout << "NULL\n";
 }
 
 /*
@@ -156,14 +156,14 @@ template <class T> void LinkedList<T>::iterateForward()
 */
 template <class T> void LinkedList<T>::iterateBackward()
 {
-	std::cout << "NULL\n";
+	
 	ListNode<T>* tmp = tail;
 	while (tmp != NULL)
 	{
 		std::cout << tmp->getData() << " <--> ";
 		tmp = tmp->getPrev();
 	}
-	std::cout<<"NULL\n";
+	std::cout << "NULL\n";
 }
 
 
