@@ -12,7 +12,6 @@
 #include <cstddef>
 #include "ListNode.h"
 
-using namespace std;
 
 template <class T> class LinkedList
 {
@@ -142,14 +141,14 @@ template <class T> void LinkedList<T>::removeLast()
 */
 template <class T> void LinkedList<T>::iterateForward()
 {
-	cout<<"NULL\n";
+	std::cout<<"NULL\n";
 	ListNode<T>* tmp = head;
 	while (tmp != NULL)
 	{
-		cout << tmp->getData() << " <--> ";
+		std::cout << tmp->getData() << " <--> ";
 		tmp = tmp->getNext();
 	}
-	cout<<"NULL\n";
+	std::cout<<"NULL\n";
 }
 
 /*
@@ -157,14 +156,14 @@ template <class T> void LinkedList<T>::iterateForward()
 */
 template <class T> void LinkedList<T>::iterateBackward()
 {
-	cout << "NULL\n";
+	std::cout << "NULL\n";
 	ListNode<T>* tmp = tail;
 	while (tmp != NULL)
 	{
-		cout << tmp->getData() << " <--> ";
+		std::cout << tmp->getData() << " <--> ";
 		tmp = tmp->getPrev();
 	}
-	cout<<"NULL\n";
+	std::cout<<"NULL\n";
 }
 
 

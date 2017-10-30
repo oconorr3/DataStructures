@@ -9,7 +9,6 @@
 #include <cstdlib>
 #include <cstddef>
 
-using namespace std;
 
 template <class T> class ListNode
 {
