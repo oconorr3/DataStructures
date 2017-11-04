@@ -228,25 +228,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	 * @param root
 	 * @return true if the given root is a BST, false otherwise
 	 */
-	public boolean isBinarySearchTree(BinaryNode<T> root) {
-		if (root == null) 	//empty tree is a BST
-		    return true; 
-		     
-		  /* false if the max of the left is > than us */
-		  if (root.getLeft() != null && maxValue(root.getLeft()).compareTo(root.getData()) > 0) 
-		    return false; 
-		     
-		  /* false if the min of the right is <= than us */
-		  if (root.getRight() != null && minValue(root.getRight()).compareTo(root.getData()) < 0) 
-		    return false; 
-		   
-		  /* false if, recursively, the left or right is not a BST */
-		  if (!isBinarySearchTree(root.getLeft()) || !isBinarySearchTree(root.getRight())) 
-		    return false; 
-		     
-		  /* passing all that, it's a BST */
-		  return true;
-	}
+	private boolean validateBST(TreeNode root, long min, long max) {
+		if (root == null) {
+		    return true;
+		}
+
+		if (root.val >= max || root.val <= min) {
+		    return false;
+		}
+
+		return isBST(root.left, min, root.val) && isBST(root.right, root.val, max);
+    	}
 	
 	/**
 	 * Given a Binary Search Tree and a target number, return true if 
